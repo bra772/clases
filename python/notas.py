@@ -62,8 +62,26 @@ respuesta.isnumeric() #True
 
 NOMBRE_PERRO = 'Panchita'
 
+# Tipos de datos, anotaciones de tipo:
+# Puedo usarlo como una nota, pero no afecta el codigo
+# El interprete va a omitir esto
+def suma(numero1: int, numero2: int) -> int:
+    return numero1 + numero2
+
+# Parametros por defecto
+
+def pedir_sabor(gusto = 'DDL'):
+    print(gusto)
+
+# Valor nulo, evitar usar
+valor_nulo = None
+
 # "Emular" un main:
 
+def main():
+    return None
 
 if __name__ == "__main__":
+    main()
     print("Hola mundo")
+
