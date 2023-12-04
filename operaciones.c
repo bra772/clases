@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "utiles.h"
+#define MAX_ELEMENTOS 100
 
 // Pre: vector1 y vector2 tienen que estar ordenados de la misma manera.
 // 		0 <= tope1, tope2 <= MAX_ELEMENTOS
@@ -28,7 +28,6 @@ void intersectar(
 		}
 	}
 }
-
 // Pre: vector1 y vector2 tienen que estar ordenados de la misma manera.
 // 		0 <= tope1, tope2 <= MAX_ELEMENTOS
 // Pos: Carga en vector_resultado la unión de los vectores 1 y 2.
@@ -152,59 +151,6 @@ int main() {
 	int vector_impares[MAX_ELEMENTOS] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23};
 	int tope_primos = 10;
 	int tope_impares = 12;
-
-	printf("Vector primos: ");
-	imprimir_vector(vector_primos, tope_primos);
-	printf("\nVector impares: ");
-	imprimir_vector(vector_impares, tope_impares);
-
-	int vector_interseccion[MAX_ELEMENTOS];
-	int tope_interseccion = 0;
-	intersectar(
-		vector_primos, tope_primos,
-		vector_impares, tope_impares,
-		vector_interseccion, &tope_interseccion
-	);
-	printf("\nVector intersección: ");
-	imprimir_vector(vector_interseccion, tope_interseccion);
-
-	int vector_union[2*MAX_ELEMENTOS];
-	int tope_union = 0;
-	unir(
-		vector_primos, tope_primos,
-		vector_impares, tope_impares,
-		vector_union, &tope_union
-	);
-	printf("\nVector unión: ");
-	imprimir_vector(vector_union, tope_union);
-
-	int vector_mezcla[2*MAX_ELEMENTOS];
-	int tope_mezcla = 0;
-	mezclar(
-		vector_primos, tope_primos,
-		vector_impares, tope_impares,
-		vector_mezcla, &tope_mezcla
-	);
-	printf("\nVector mezcla: ");
-	imprimir_vector(vector_mezcla, tope_mezcla);
-
-	int vector_diferencia[2*MAX_ELEMENTOS];
-	int tope_diferencia = 0;
-	restar(
-		vector_primos, tope_primos,
-		vector_impares, tope_impares,
-		vector_diferencia, &tope_diferencia
-	);
-	printf("\nVector diferencia (primos - impares): ");
-	imprimir_vector(vector_diferencia, tope_diferencia);
-
-	restar(
-		vector_impares, tope_impares,
-		vector_primos, tope_primos,
-		vector_diferencia, &tope_diferencia
-	);
-	printf("\nVector diferencia (impares - primos): ");
-	imprimir_vector(vector_diferencia, tope_diferencia);
 
 	return 0;
 }
